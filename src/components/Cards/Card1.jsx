@@ -1,11 +1,18 @@
 import React from "react";
 
-function Card1({ data }) {
+function Card1({ data, isSelected, onClick }) {
   return (
-    <div className="w-[50rem] border border-gray-200 rounded-lg p-5 cursor-pointer flex items-center gap-5">
+    <div
+      className={`w-[50rem] border rounded-lg p-4 cursor-pointer flex items-center gap-5 transition duration-200 ease-in-out hover:shadow-md ${
+        isSelected ? "border-yellow-400 shadow-xl" : "border-[#eaeaea]"
+      }`}
+      onClick={onClick}
+    >
       <img src={data.image} alt="card-img" />
-      <span className="text-gray-500 font-medium text-lg">
-        <span className="text-black">{data.text.split(" ")[0]}</span>{" "}
+      <span className="text-lg text-gray-500 font-medium">
+        <span className={isSelected ? "text-black font-bold" : "text-black"}>
+          {data.text.split(" ")[0]}
+        </span>{" "}
         {data.text.split(" ").splice(1).join(" ")}
       </span>
     </div>

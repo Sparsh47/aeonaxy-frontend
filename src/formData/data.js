@@ -1,30 +1,47 @@
+import res_2 from "../images/7_2.png";
+import one_1 from "../images/1_1.png";
+import one_2 from "../images/1_2.png";
+import one_3 from "../images/1_3.png";
+import one_4 from "../images/1_4.png";
+import one_5 from "../images/1_5.png";
+import one_6 from "../images/1_6.png";
+import two_1 from "../images/2_1.png";
+import two_2 from "../images/2_2.png";
+import two_3 from "../images/2_3.png";
+import two_4 from "../images/2_4.png";
+import two_5 from "../images/2_5.png";
+import four_1 from "../images/3_1.png";
+import four_2 from "../images/3_2.png";
+import four_3 from "../images/3_3.png";
+import four_4 from "../images/3_4.png";
+
 export const cardData = [
   {
     id: "qualification",
     content: [
       {
         text: "Student or soon to be enrolled",
-        image: "#",
+        image: one_1,
       },
       {
         text: "Professional pursuing a carrer",
-        image: "#",
+        image: one_2,
       },
       {
         text: "Parent of a school-age child",
-        image: "#",
+        image: one_3,
       },
       {
         text: "Lifelong learner",
-        image: "#",
+        image: one_4,
       },
       {
         text: "Teacher",
-        image: "#",
+        image: one_5,
       },
       {
         text: "Other",
-        image: "#",
+        image: one_6,
       },
     ],
   },
@@ -33,23 +50,23 @@ export const cardData = [
     content: [
       {
         text: "Learning specific skills to advance my carrer",
-        image: "#",
+        image: two_1,
       },
       {
         text: "Exploring new topics I'm interested in",
-        image: "#",
+        image: two_2,
       },
       {
         text: "Refreshing my math foundations",
-        image: "#",
+        image: two_3,
       },
       {
         text: "Exercising my brain to stay sharp",
-        image: "#",
+        image: two_4,
       },
       {
         text: "Something else",
-        image: "#",
+        image: two_5,
       },
     ],
   },
@@ -59,22 +76,22 @@ export const cardData = [
       {
         text1: "Arithmetic",
         text2: "Introductory",
-        image: "#",
+        image: four_1,
       },
       {
         text1: "Basic Algebra",
         text2: "Foundational",
-        image: "#",
+        image: four_2,
       },
       {
         text1: "Intermediate Algebra",
         text2: "Intermediate",
-        image: "#",
+        image: four_3,
       },
       {
         text1: "Calculus",
         text2: "Advanced",
-        image: "#",
+        image: four_4,
       },
     ],
   },
@@ -112,5 +129,18 @@ export const questionData = [
   {
     text1: "Learning paths based on your answers",
     text2: "Choose one to get started. You can switch anytime.",
+  },
+];
+
+export const resultData = [
+  {
+    content:
+      "Foundational Math Build your foundational skills in algebra, geometry and probability.",
+    image: res_2,
+  },
+  {
+    content:
+      "Mathematical Thinking Build your foundational skills in algebra, geometry and probability.",
+    image: res_2,
   },
 ];

@@ -1,8 +1,13 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { UseContext } from "./customHooks/useContext";
 import { questionData, cardData } from "./formData/data";
 import Page from "./Page";
 import Progress from "./components/Misc/Progress";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStar, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+library.add(faStar, faChevronLeft);
 
 const Page1 = lazy(() => import("./components/pageComponents/Page1"));
 const Page2 = lazy(() => import("./components/pageComponents/Page2"));
@@ -35,6 +40,17 @@ function App() {
     data = cardData[2];
   }
 
+  useEffect(() => {
+    if (page === 6) {
+      var interval = setTimeout(() => {
+        setPage(7);
+      }, 3000);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [page]);
+
   const renderPage = () => {
     const PageComponent = pageComponents[page];
     return PageComponent ? (
@@ -49,7 +65,13 @@ function App() {
   };
 
   const handlePaginationForward = () => {
-    setPage((prev) => prev + 1);
+    if (page >= 6) {
+      setTimeout(() => {
+        setPage((prev) => prev + 1);
+      }, 5000); // 5 seconds delay before rendering page 7
+    } else {
+      setPage((prev) => prev + 1);
+    }
   };
 
   const handlePaginationBackward = () => {
@@ -61,7 +83,9 @@ function App() {
       {page > 5 ? null : (
         <div className="flex flex-row items-center justify-center gap-5 w-full mt-20">
           {page <= 1 ? null : (
-            <button onClick={handlePaginationBackward}>{"<"}</button>
+            <button onClick={handlePaginationBackward}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
           )}
           <Progress />
         </div>
