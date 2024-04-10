@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import Card1 from "../Cards/Card1";
 import Heading from "../Misc/Heading";
+import { UseContext } from "../../customHooks/useContext";
 
 function Page1({ textData, cardData }) {
   const [selectedCard, setSelectedCard] = useState(null);
+  const { setStart } = UseContext();
 
   const handleCardClick = (index) => {
     setSelectedCard(index === selectedCard ? null : index);
   };
+
+  if (selectedCard) {
+    setStart(true);
+  } else {
+    setStart(false);
+  }
 
   return (
     <div className="flex flex-col gap-4">

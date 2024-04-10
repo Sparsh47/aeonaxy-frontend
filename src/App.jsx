@@ -18,7 +18,7 @@ const Page6 = lazy(() => import("./components/pageComponents/Page6"));
 const Page7 = lazy(() => import("./components/pageComponents/Page7"));
 
 function App() {
-  const { page, setPage } = UseContext();
+  const { page, setPage, start } = UseContext();
 
   const pageComponents = {
     1: Page1,
@@ -65,13 +65,7 @@ function App() {
   };
 
   const handlePaginationForward = () => {
-    if (page >= 6) {
-      setTimeout(() => {
-        setPage((prev) => prev + 1);
-      }, 5000); // 5 seconds delay before rendering page 7
-    } else {
-      setPage((prev) => prev + 1);
-    }
+    setPage((prev) => prev + 1);
   };
 
   const handlePaginationBackward = () => {
@@ -93,8 +87,9 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>{renderPage()}</Suspense>
       {page >= 6 ? null : (
         <button
-          className="bg-black text-white rounded-lg font-medium w-[220px] h-[60px] text-lg px-5 py-2"
+          className="bg-black text-white rounded-lg font-medium w-[220px] h-[60px] text-lg px-5 py-2 disabled:bg-gray-200"
           onClick={handlePaginationForward}
+          disabled={!start}
         >
           Continue
         </button>
