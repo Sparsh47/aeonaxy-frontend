@@ -87,7 +87,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>{renderPage()}</Suspense>
       {page >= 6 ? null : (
         <button
-          className="bg-black text-white rounded-lg font-medium w-[220px] h-[60px] text-lg px-5 py-2 disabled:bg-gray-200"
+          className="bg-black text-white rounded-lg font-medium w-[100px] md:w-[220px] md:h-[60px] text-sm md:text-lg py-2 md:px-5 md:py-2 disabled:bg-gray-200 mb-5"
           onClick={handlePaginationForward}
           disabled={!start}
         >

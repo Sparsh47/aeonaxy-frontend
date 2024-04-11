@@ -21,8 +21,8 @@ function CircularProgressBar() {
   }, [progress]);
 
   return (
-    <div style={{ width: "200px", height: "200px", position: "relative" }}>
-      <svg viewBox="0 0 150 150" style={{ width: "100%", height: "100%" }}>
+    <div className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/5 mx-auto">
+      <svg viewBox="0 0 150 150" className="w-full h-auto">
         <circle
           cx="75"
           cy="75"

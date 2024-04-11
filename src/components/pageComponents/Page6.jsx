@@ -5,7 +5,7 @@ function Page6() {
   return (
     <div className="w-[100%] h-[100vh] flex flex-col items-center justify-center gap-5">
       <CircularProgress />
-      <div className="text-center text-3xl font-bold">
+      <div className="text-center text-[11px] sm:text-xl md:text-2xl lg:text-3xl font-bold">
         Finding learning path recommendations for you based on
         <br /> your responses
       </div>

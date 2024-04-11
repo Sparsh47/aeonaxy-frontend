@@ -11,7 +11,7 @@ function Page1({ textData, cardData }) {
     setSelectedCard(index === selectedCard ? null : index);
   };
 
-  if (selectedCard) {
+  if (selectedCard === 0 || selectedCard) {
     setStart(true);
   } else {
     setStart(false);
@@ -22,7 +22,7 @@ function Page1({ textData, cardData }) {
       <div className="text-center">
         <Heading textData={textData} />
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col items-center gap-3">
         {cardData.content.map((data, index) => (
           <Card1
             key={index}

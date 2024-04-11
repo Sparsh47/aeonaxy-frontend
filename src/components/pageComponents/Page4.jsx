@@ -14,7 +14,7 @@ function Page4({ textData, cardData }) {
       <div className="text-center">
         <Heading textData={textData} />
       </div>
-      <div className="flex gap-5 my-10">
+      <div className="flex flex-col items-center md:flex-row gap-5 my-10">
         {cardData.content.map((data, index) => (
           <Card2
             key={index}

@@ -9,7 +9,7 @@ function Page7({ textData }) {
       <div className="text-center">
         <Heading textData={textData} />
       </div>
-      <div className="flex items-center justify-center gap-5">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-5">
         {resultData.map((data, index) => (
           <Card3 key={index} index={index} data={data} />
         ))}
